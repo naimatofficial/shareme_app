@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, BrowserRouter } from 'react-router-dom';
 
 import { Login } from './components';
 import Home from './container/Home';
@@ -14,10 +14,12 @@ const App = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route path="login" element={<Login />} />
-      <Route path="/*" element={<Home />} />
-    </Routes>
+		<BrowserRouter>
+			<Routes>
+				<Route path={"login"} element={<Login />} />
+				<Route path={"/*"} element={<Home />} />
+			</Routes>
+		</BrowserRouter>
   );
 };
 
